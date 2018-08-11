@@ -23,9 +23,9 @@ class Register extends React.Component {
   };
 
   onSubmitRegister = () => {
-    fetch('http://localhost:3001/register', {
-      method: 'post',
-      headers: { 'Content-Type': 'application/json' },
+    fetch("https://guarded-stream-50690.herokuapp.com/register", {
+      method: "post",
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         name: this.state.name,
         email: this.state.email,
@@ -34,11 +34,11 @@ class Register extends React.Component {
     })
       .then(response => response.json())
       .then(user => {
-        if(user.id) {
+        if (user.id) {
           this.props.loadUser(user);
           this.props.onRouteChange("home");
         }
-      })
+      });
   }
 
   render() {
