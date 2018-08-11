@@ -112,7 +112,7 @@ class App extends Component {
         .then(response => {
           if (response) {
             fetch(
-              "https://guarded-stream-50690.herokuapp.com//image",
+              "https://guarded-stream-50690.herokuapp.com/image",
               {
                 method: "put",
                 headers: { "Content-Type": "application/json" },
